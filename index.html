@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <!-- REQUIRED for responsive behavior -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photography</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="./images/6-66877_camera-photography-icon-camera-icon-colour-png-transparent-removebg-preview.png">
+
+    <!-- fontawesome  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+    <!-- tailwind (keeps your original tailwind utility usage) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- custom CSS (loaded AFTER tailwind so overrides apply) -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-gradient-to-b from-cyan-100 via-blue-300 to-indigo-400">
+
+    <!-- HERO with navigation -->
+    <div id="hero"
+        class="w-full h-[40rem] md:h-screen bg-cover bg-bottom bg-no-repeat relative"
+        style="background-image: url('./images/photo-1532712938310-34cb3982ef74.jfif'); animation: fadeup 1s ease-in;">
+        
+        <!-- NAV (absolute in hero) -->
+        <nav class="absolute top-0 left-0 w-full z-40">
+            <div class="max-w-7xl mx-auto flex items-center justify-between lg:p-16 p-5">
+                <!-- brand / left side -->
+                <a href="#" class="text-white font-bold text-2xl">Photography</a>
+
+                <!-- desktop links -->
+                <ul id="navLinks"
+                    class="hidden lg:flex lg:gap-12 text-white text-lg items-center">
+                    <li class="hover:text-indigo-400"><a href="#about" class="font-bold">ABOUT</a></li>
+                    <li class="hover:text-indigo-400"><a href="#services" class="font-bold">SERVICES</a></li>
+                    <li class="hover:text-indigo-400"><a href="#testimonial" class="font-bold">TESTIMONIALS</a></li>
+                    <li class="hover:text-indigo-400"><a href="#gallery" class="font-bold">GALLERY</a></li>
+                    <li class="hover:text-indigo-400"><a href="#contact" class="font-bold">CONTACT</a></li>
+                </ul>
+
+                <!-- hamburger button (mobile) -->
+                <button id="menuBtn" aria-label="Open menu"
+                    class="lg:hidden text-white text-3xl focus:outline-none"><i class="fa-solid fa-bars"></i></button>
+            </div>
+
+            <!-- mobile menu (hidden by default) -->
+            <div id="mobileMenu" class="lg:hidden hidden absolute left-0 right-0 top-[68px] z-50">
+                <div class="bg-white/95 backdrop-blur-md shadow-md">
+                    <ul class="flex flex-col items-center py-4 space-y-3">
+                        <li><a href="#about" class="text-indigo-700 font-semibold" onclick="closeMobileMenu()">ABOUT</a></li>
+                        <li><a href="#services" class="text-indigo-700 font-semibold" onclick="closeMobileMenu()">SERVICES</a></li>
+                        <li><a href="#testimonial" class="text-indigo-700 font-semibold" onclick="closeMobileMenu()">TESTIMONIALS</a></li>
+                        <li><a href="#gallery" class="text-indigo-700 font-semibold" onclick="closeMobileMenu()">GALLERY</a></li>
+                        <li><a href="#contact" class="text-indigo-700 font-semibold" onclick="closeMobileMenu()">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- optional hero center content (kept empty so background image shows) -->
+    </div>
+
+    <!-- ABOUT -->
+    <div id="about" class="w-full py-12 px-6 lg:px-[16rem] lg:py-[6rem]">
+        <h1 id="head1" class="text-center text-4xl font-bold lg:pt-[2.5rem]">Every picture tells a story. Let us tell your
+            yours.</h1>
+        <p id="para1" class="text-xl text-justify pt-6 pb-6 font-medium">
+            Every moment in life has its own story—unique, powerful, and filled with emotions that words often fail to
+            capture. Through the lens, we transform fleeting moments into timeless memories, preserving the essence of
+            your journey. Whether it’s the joy of a celebration, the beauty of a serene landscape, or the warmth of a
+            candid smile, each photograph we take holds a narrative that speaks directly to the heart. We believe that
+            every picture tells a story, and our mission is to ensure that your story is told in the most beautiful and
+            authentic way possible.
+        </p>
+        <p id="para2" class="text-xl text-justify pb-6 font-medium">
+            Our approach to photography goes beyond just clicking a shutter; it's about creating a visual masterpiece that
+            resonates with your emotions and experiences. We take the time to understand the moments that matter most to
+            you, translating them into images that reflect your unique perspective. Let us tell your story through our
+            lens, capturing not just the sights, but the feelings that make each moment unforgettable. From life's biggest
+            milestones to its quietest moments, we’re here to make sure your story lives on, beautifully framed in every
+            shot.
+        </p>
+    </div>
+
+    <!-- PORTFOLIO -->
+    <div id="portfolio" class="w-full pt-12 pb-24 bg-slate-100">
+        <h1 id="head2" class="text-center text-4xl font-bold pb-10">~ PORTFOLIO ~</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 px-6 lg:px-[12rem]">
+            <div id="port1" class="image shadow-xl relative col-span-1 hover:scale-105 transition-transform duration-200 ease-in-out">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[30rem] lg:h-[30rem] rounded-lg object-cover"
+                    src="./images/photo-1534528741775-53994a69daeb.jfif" alt="portraits">
+                <div class="absolute inset-0 flex justify-center items-end text-white text-2xl font-bold py-6">
+                    PORTRAITS
+                </div>
+                <div class="absolute inset-0 flex justify-center items-center opacity-0 transition-opacity duration-200 hover:opacity-100">
+                    <a href="#gallery">
+                        <button class="rounded-lg text-white font-semibold bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 p-2.5 text-sm hover:bg-gradient-to-br transition-colors duration-200">VIEW MORE</button>
+                    </a>
+                </div>
+            </div>
+
+            <div id="port2" class="image shadow-xl relative col-span-1 hover:scale-105 transition-transform duration-200 ease-in-out">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[30rem] lg:h-[30rem] rounded-lg object-cover"
+                    src="./images/photo-1606216794074-735e91aa2c92.jfif" alt="weddings">
+                <div class="absolute inset-0 flex justify-center items-end text-white text-2xl font-bold py-6">WEDDINGS</div>
+                <div class="absolute inset-0 flex justify-center items-center opacity-0 transition-opacity duration-200 hover:opacity-100">
+                    <a href="#gallery">
+                        <button class="rounded-lg text-white font-semibold bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 p-2.5 text-sm hover:bg-gradient-to-br transition-colors duration-200">VIEW MORE</button>
+                    </a>
+                </div>
+            </div>
+
+            <div id="port3" class="image shadow-xl relative col-span-1 hover:scale-105 transition-transform duration-200 ease-in-out">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[30rem] lg:h-[30rem] rounded-lg object-cover"
+                    src="./images/photo-1515886657613-9f3515b0c78f.jfif" alt="fashions">
+                <div class="absolute inset-0 flex justify-center items-end text-white text-2xl font-bold py-6">FASHIONS</div>
+                <div class="absolute inset-0 flex justify-center items-center opacity-0 transition-opacity duration-200 hover:opacity-100">
+                    <a href="#gallery">
+                        <button class="rounded-lg text-white font-semibold bg-gradient-to-r from-indigo-500 via-indigo-600 to-indigo-700 p-2.5 text-sm hover:bg-gradient-to-br transition-colors duration-200">VIEW MORE</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SERVICES -->
+    <div id="services" class="w-full bg-[url('/images/photo-1631983856500-3ca71c3fd3af.jfif')] bg-cover bg-center bg-no-repeat">
+        <div class="w-full bg-[rgba(0,0,0,0.750)] text-white">
+            <h1 id="head3" class="text-4xl font-bold text-center pt-24">~ OUR SERVICES ~</h1>
+            <p id="para3" class="text-xl text-justify pt-8 lg:px-[16rem] px-6">Our photography services focus on capturing the
+                moments that matter most to you. From portraits and weddings to events and landscapes, we create stunning,
+                high-quality images that tell your unique story. Our approach is personalized and detail-oriented, ensuring
+                that every shot reflects the emotions and essence of each moment. Let us transform your memories into
+                timeless visuals, beautifully framed in every photograph.</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 pt-12 pb-16 lg:px-32 px-6">
+                <div id="service1" class="col-span-1">
+                    <h1 class="text-2xl text-center">~ Portrait Sessions ~</h1>
+                    <p class="text-lg text-justify py-6">Our portrait photography service captures your true essence with natural,
+                        authentic images that reflect your personality. We create a comfortable atmosphere to ensure every shot
+                        tells your unique story in a genuine and timeless way.</p>
+                </div>
+
+                <div id="service2" class="col-span-1">
+                    <h1 class="text-2xl text-center">~ Wedding Sessions ~</h1>
+                    <p class="text-lg text-justify py-6">Our wedding photography service is dedicated to capturing the joy, love,
+                        and unforgettable moments of your special day. We blend candid shots with artistic compositions to create a
+                        timeless visual story that you’ll cherish forever.</p>
+                </div>
+
+                <div id="service3" class="col-span-1">
+                    <h1 class="text-2xl text-center">~ Fashion Sessions ~</h1>
+                    <p class="text-lg text-justify py-6">Our fashion photography service brings creativity and style to every shot,
+                        highlighting the essence of your brand or personal look. We focus on delivering striking, high-quality images
+                        that showcase your vision with elegance and flair.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- TESTIMONIALS -->
+    <div id="testimonial" class="w-full pb-12">
+        <h1 id="head4" class="text-center text-4xl font-bold py-12">~ TESTIMONIALS ~</h1>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 px-6 lg:px-28">
+            <div id="test1" class="shadow-xl bg-cyan-900 px-5 text-white rounded-lg">
+                <div class="py-4"><i class="fa-solid fa-quote-left text-4xl"></i></div>
+                <div class="text-center">
+                    <h1 class="text-xl font-bold pt-4">Family Moments Captured Perfectly</h1>
+                    <p class="py-8 text-justify px-6">I can't thank the team enough for the incredible portraits they took of my family.
+                        The photographer made us feel comfortable and relaxed, resulting in beautiful, natural shots that truly capture our personalities.</p>
+                    <div class="flex justify-center"><img class="rounded-full w-32 h-32 object-cover border-white border-4"
+                            src="./images/pexels-photo-774909.jpeg" alt="client"></div>
+                    <h1 class="text-xl font-bold pt-4 pb-6">Emily R</h1>
+                </div>
+            </div>
+
+            <div id="test2" class="shadow-xl bg-cyan-900 px-5 text-white rounded-lg my-10 lg:my-0">
+                <div class="py-4"><i class="fa-solid fa-quote-left text-4xl"></i></div>
+                <div class="text-center">
+                    <h1 class="text-xl font-bold pt-4">A Day to Remember, Beautifully Documented</h1>
+                    <p class="py-8 text-justify px-6">Our wedding photos are absolutely stunning. The photographer captured every special moment with such creativity and artistry.</p>
+                    <div class="flex justify-center"><img class="rounded-full w-32 h-32 object-cover border-white border-4"
+                            src="./images/pexels-photo-2379005.jpeg" alt="client"></div>
+                    <h1 class="text-xl font-bold pt-4 pb-6">James T</h1>
+                </div>
+            </div>
+
+            <div id="test3" class="shadow-xl bg-cyan-900 px-5 text-white rounded-lg">
+                <div class="py-4"><i class="fa-solid fa-quote-left text-4xl"></i></div>
+                <div class="text-center">
+                    <h1 class="text-xl font-bold pt-4">Bringing Your Style to Life with Every Shot</h1>
+                    <p class="py-8 text-justify px-6">Working with the team for my fashion shoot was an amazing experience. They understood my vision perfectly and created striking images.</p>
+                    <div class="flex justify-center"><img class="rounded-full w-32 h-32 object-cover border-white border-4"
+                            src="./images/pexels-moose-photos-170195-1036623.jpg" alt="client"></div>
+                    <h1 class="text-xl font-bold pt-4 pb-6">Sophie L</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GALLERY -->
+    <div id="gallery" class="w-full bg-slate-100 pb-12">
+        <h1 id="head5" class="text-center text-4xl font-bold py-12">~ GALLERY ~</h1>
+
+        <div class="gallery grid grid-cols-1 lg:grid-cols-3 gap-6 lg:px-[16rem] px-6">
+            <div id="img1" class="shadow-xl">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/photo-1544005313-94ddf0286df2.jfif" alt="">
+            </div>
+            <div id="img2" class="shadow-xl my-6 lg:my-0">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/photo-1551843073-4a9a5b6fcd5f.jfif" alt="">
+            </div>
+            <div id="img3" class="shadow-xl">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/photo-1659677704911-cfb3c7a23b06.jfif" alt="">
+            </div>
+            <div id="img4" class="shadow-xl my-6 lg:my-0">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/premium_photo-1690148812608-9942834931a1.jfif" alt="">
+            </div>
+            <div id="img5" class="shadow-xl">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/photo-1511285560929-80b456fea0bc.jfif" alt="">
+            </div>
+            <div id="img6" class="shadow-xl my-6 lg:my-0">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/photo-1721153225949-9e9a3f36e574.jfif" alt="">
+            </div>
+            <div id="img7" class="shadow-xl">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/photo-1488161628813-04466f872be2.jfif" alt="">
+            </div>
+            <div id="img8" class="shadow-xl my-6 lg:my-0">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/premium_photo-1661281366900-88b41445a004.jfif" alt="">
+            </div>
+            <div id="img9" class="shadow-xl">
+                <img class="w-full h-auto sm:h-[24rem] md:h-[20rem] lg:h-[200px] object-cover rounded-lg"
+                    src="./images/premium_photo-1677327970782-1d065c2373d6.jfif" alt="">
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <div id="contact" class="w-full px-6 lg:px-[16rem] py-12">
+        <div id="contactsection" class="grid grid-cols-1 lg:grid-cols-2 shadow-xl">
+            <div class="w-full col-span-1 bg-slate-100 p-8">
+                <h1 class="text-2xl font-bold text-indigo-400">Let's Get In Touch</h1>
+                <p class="text-justify py-4 font-medium">Have questions or ready to book a session? We’re here to help.
+                    Let’s connect and turn your moments into lasting memories.</p>
+                <div class="flex items-center gap-6 pt-3">
+                    <i class="fa-solid fa-location-dot text-3xl text-indigo-400"></i>
+                    <h1 class="font-medium">Trivandrum</h1>
+                </div>
+                <div class="flex items-center gap-4 py-3">
+                    <i class="fa-solid fa-envelope text-3xl text-indigo-400 "></i>
+                    <h1 class="font-medium">contact@example.com</h1>
+                </div>
+                <div class="flex items-center gap-4 pb-5">
+                    <i class="fa-solid fa-phone text-3xl text-indigo-400"></i>
+                    <h1 class="font-medium">8943668355</h1>
+                </div>
+                <h1 class="text-xl font-bold">Connect with us : </h1>
+                <div class="flex items-center gap-6 pt-5">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i
+                            class="fa-brands fa-square-facebook text-4xl text-indigo-400 hover:scale-125 transition-transform duration-200 ease-in-out"></i></a>
+                    <a href="https://x.com/i/flow/login" target="_blank" rel="noreferrer"> <i
+                            class="fa-brands fa-square-x-twitter text-4xl text-indigo-400 hover:scale-125 transition-transform duration-200 ease-in-out"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noreferrer"><i
+                            class="fa-brands fa-square-instagram text-4xl text-indigo-400 hover:scale-125 transition-transform duration-200 ease-in-out"></i></a>
+                </div>
+            </div>
+
+            <div class="w-full col-span-1 bg-indigo-400 p-8">
+                <h1 class="text-2xl font-bold text-white">Contact Us</h1>
+                <form>
+                    <input
+                        class="rounded-lg block w-full bg-transparent text-white placeholder-white border-2 border-white focus:outline-none p-3 mb-3 mt-4"
+                        style="font-weight: 500;" type="text" placeholder="Name">
+                    <input
+                        class="rounded-lg block w-full bg-transparent text-white placeholder-white border-2 border-white focus:outline-none p-3"
+                        type="email" placeholder="Email" style="font-weight: 500;">
+                    <input class=" rounded-lg block w-full bg-transparent text-white placeholder-white border-2 border-white focus:outline-none p-3 my-3"
+                        type="number" placeholder="Phone" maxlength="10" style="font-weight: 500;">
+                    <textarea
+                        class="rounded-lg block w-full bg-transparent text-white placeholder-white border-2 border-white focus:outline-none p-3"
+                        placeholder="Message" rows="5" style="font-weight: 500;"></textarea>
+                </form>
+                <button
+                    class="rounded-lg bg-white mt-3 p-2.5 text-indigo-400 border-2 border-white font-medium hover:text-white hover:bg-indigo-400">Submit</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="w-full bg-slate-900 text-white">
+        <div id="footersection" class="grid grid-cols-1 lg:grid-cols-3 py-8 px-6 lg:px-[16rem]">
+            <div class="col-span-1 text-start pt-6 lg:pt-0">
+                <h1 class="text-2xl font-bold">QUICK LINKS</h1>
+                <ol class="pt-5">
+                    <li class="py-2"><a href="#" class="font-medium hover:text-indigo-400">ABOUT</a></li>
+                    <li><a href="#services" class="font-medium hover:text-indigo-400">SERVICES</a></li>
+                    <li class="py-2"><a href="#testimonial" class="font-medium hover:text-indigo-400">TESTIMONIALS</a></li>
+                    <li><a href="#gallery" class="font-medium hover:text-indigo-400">GALLERY</a></li>
+                    <li class="py-2"><a href="#contact" class="font-medium hover:text-indigo-400">CONTACT</a></li>
+                </ol>
+            </div>
+
+            <div class="col-span-1 text-start pt-6 lg:pt-0">
+                <h1 class="text-2xl font-bold">FOLLOW US</h1>
+                <div class="flex justify-start gap-6 pt-5">
+                    <a href="https://www.facebook.com/" target="_blank" rel="noreferrer"><i
+                            class="fa-brands fa-square-facebook text-4xl text-white hover:scale-125 transition-transform duration-200 ease-in-out"></i></a>
+                    <a href="https://x.com/i/flow/login" target="_blank" rel="noreferrer"><i
+                            class="fa-brands fa-square-x-twitter text-4xl text-white hover:scale-125 transition-transform duration-200 ease-in-out"></i></a>
+                    <a href="https://www.instagram.com/accounts/login/" target="_blank" rel="noreferrer"><i
+                            class="fa-brands fa-square-instagram text-4xl text-white hover:scale-125 transition-transform duration-200 ease-in-out"></i></a>
+                </div>
+            </div>
+
+            <div class="col-span-1 text-start pt-6 pb-4 lg:pb-0 lg:pt-0">
+                <h1 class="text-2xl font-bold">NEWSLETTER</h1>
+                <p class="pt-5 text-justify">Join our newsletter for photography tips, updates, and exclusive offers. Stay
+                    inspired and in the loop with our latest news and deals.</p>
+
+                <input
+                    class="rounded-lg block w-full bg-transparent text-white placeholder-white border-2 border-white focus:outline-none p-3 mb-3 mt-4"
+                    style="font-weight: 500;" type="text" placeholder="Name">
+                <input
+                    class="rounded-lg block w-full bg-transparent text-white placeholder-white border-2 border-white focus:outline-none p-3 my-4 lg:my-0"
+                    type="email" placeholder="Email" style="font-weight: 500;">
+                <button
+                    class="block w-full rounded-lg bg-white mt-3 p-2.5 text-slate-900 border-2 border-white font-medium hover:text-white hover:bg-slate-900">Submit</button>
+            </div>
+        </div>
+
+        <hr class="w-4/5 mx-auto">
+        <p class="text-center py-4">© 2025 Photography Website. All Rights Reserved</p>
+    </footer>
+
+    <!-- MENU SCRIPT -->
+    <script>
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu after clicking a link
+        function closeMobileMenu() {
+            if (!mobileMenu.classList.contains('hidden')) {
+                mobileMenu.classList.add('hidden');
+            }
+        }
+
+        // Hide mobile menu when window is resized > 1024px (desktop)
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1024) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+    </script>
+
+</body>
+</html>

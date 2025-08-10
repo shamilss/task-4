@@ -1,0 +1,129 @@
+/* ---------------------------
+   Custom CSS (overrides + animations)
+   --------------------------- */
+
+/* Reset + base font (keeps your Space Grotesk) */
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Space Grotesk", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* small helper to prevent number input spin (keeps from original) */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+/* gallery hover from original */
+.image:hover img,
+.gallery img {
+    opacity: .9;
+    transition: opacity 0.2s ease-in-out, transform 0.2s ease-in-out;
+}
+.gallery img:hover {
+    opacity: 1;
+    transform: scale(1.05);
+}
+
+/* Animations (from original) */
+@keyframes fadedown {
+    0% {
+        transform: translateY(-30px) scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeup {
+    0% {
+        transform: translateY(30px) scale(0.9);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+    }
+}
+
+nav {
+    animation: fadedown 0.9s ease-in-out;
+}
+
+/* fadeup on many ids from original (keeps feel) */
+#head1, #para1, #head2, #port1, #port2, #port3, #head3, #para3,
+#service1, #service2, #service3, #head4, #test1, #test2, #test3,
+#head5, #img1, #img2, #img3, #img4, #img5, #img6, #img7, #img8, #img9, #contactsection {
+    animation: fadeup 0.9s ease-in-out;
+}
+
+/* footer fade */
+#footersection, #para2 {
+    animation: fadeup 0.9s ease-in-out;
+}
+
+/* Ensure images never overflow horizontally */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+
+    /* reduce hero height on small screens so content isn't hidden */
+    #hero {
+        height: 30rem;
+        background-position: center;
+    }
+
+    /* reduce big paddings across sections */
+    #about,
+    #portfolio,
+    #services,
+    #testimonial,
+    #gallery,
+    #contact {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* force large media heights to auto so images scale properly */
+    .image img,
+    .gallery img,
+    .shadow-xl img {
+        height: auto !important;
+    }
+
+    /* contact form spacing */
+    #contactsection {
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    /* ensure mobile menu covers content cleanly */
+    #mobileMenu > div {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
+
+/* Minor style polish */
+button:focus, a:focus, input:focus, textarea:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+}
+
+/* prevent horizontal overflow caused by any long elements */
+html, body {
+    overflow-x: hidden;
+}
